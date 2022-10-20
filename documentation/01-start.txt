@@ -1,0 +1,22 @@
+developpeur => créer / modifier / partager des fichiers
+
+git et github répondent aux questions suivantes :
+
+- Qui est intervenu ?
+- Pourquoi ?
+- Quand ?
+- Qu'est-ce qui a été changé entre les différentes versions ?
+
+
+prjet que l'on veut realiser => projet de formulaire
+créer un article = envoyer => ajouter dans la page
+HTML / css / JavaScript
+
+----------------
+
+
+Organiser notre projet 
+dossier
+
+assets
+documentation

@@ -1,0 +1,201 @@
+dossiers 
+assets => css / java JavaScript / images
+
+documentation => notes de cours 
+
+creer un fichier a la racine du projet => index.html
+
+
+=> git pour pouvoir versionner ( suivre les versions / les evolutions de notre projet en HTML / CSS / JS)
+
+------
+
+commande qui permet de créer un depot / repository
+dossier local qui va contenir toutes les evolutions de notre projet 
+ATTENTION il faut saisir cette commande en choississant le PATH de la racine du projet que l'on veut suivre
+
+
+
+git init
+
+dossier .git ( dossier caché par défaut )  => stocker les différentes versions du projet 
+
+-----------
+
+git config --global user.name "Ben Yamine"
+git config --global user.email "ali.benyamine@icloud.com"
+git config -l
+
+------
+
+=> modifier le ficher index.html !
+
+lancer le versionning => suivre l'avancer de tous les fichiers dans le dosser git
+
+git status
+
+Reponse 
+
+On branch master 
+
+No commits yet => Vous n'avez pas encre fait d'enregistrement comité dans le dossier .git
+
+Untracked files: => fichier non suivi 
+  (use "git add <file>..." to include in what will be committed)
+    conseil => si tu veux suivre des fichier => proposition git add <file>
+        documentation/
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+-------------------------------------------------------------
+Manipulation 
+
+
+git add index.html
+
+De nouveau git status 
+
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        documentation/
+
+----------
+
+git commit -m "creation page index.html"
+
+[master (root-commit) 9d57b49] creation page index.html
+ 1 file changed, 12 insertions(+)
+ create mode 100644 index.html
+
+ chmod 000000
+
+ git status
+
+ Modifier l'index.html
+
+ git status
+
+difference entre le fichier index dans le git et le fichier html dans le projet 
+
+ On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        documentation/
+
+
+Satisfait de nos modification donc git add
+git status
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+    Si on veut enregistrer dans le repository la commande effectué 
+
+git commit -m "ajouter h1 + form"
+
+[master cd545d8] ajouter h1 + form
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+--------------------------
+
+Creation d'un fichier style css et coder 
+Modification de l'index pour rajouter le link du css
+
+
+git status
+
+  modified:   index.html
+
+Enregistrer la modification de l'index et suivre le fichier style
+
+git add index.html assets/style.css
+
+git status
+
+        new file:   assets/style.css
+        modified:   index.html
+
+        git commit -m " ajout du fichier style.css"
+
+[master d4f4c0c]  ajout du fichier style.css
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+ create mode 100644 assets/style.css
+
+
+ -------------------------------------
+
+ Modifier le fichier index.html :
+    - Ajouter 2 input
+ Modifier le fichier style.css :
+    - Styliser les 2 input
+
+
+=> git add des deux fichier
+=> commit pour enregistrer ces modifications
+
+
+git status apres modification 
+    En Rouge
+  modified:   assets/style.css
+  modified:   index.html
+
+  git add index.html assets/style.css
+
+  git status
+        En Vert
+        modified:   assets/style.css
+        modified:   index.html
+
+  git commit -m " ajout de 2 input + Css des input" 
+
+  [master 9b6355d]  ajout de 2 input + Css des input
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+
+
+ commande qui permet de faire 
+ git add <file>
+ git commit -m "message"
+
+ en faisant
+  
+  git commit -a -m " message"
+  git commit -am "message" 
+
+  UNIQUEMENT POUR LES FICHIER DEJA TRAQUES    
+
+
+  -----------------
+Avoir le recap des commits de ùaniere synthetisé
+  git log --oneline 
+  Avoir le detail d'un fichier commit
+  git log --online p nom du ficher 
+
+
+  ---------------
+
+  Revenir en arriere 
+
+  git checkout ==> Si on a pas fait de commit ==> effacer les lignes qui ne sont pas dans le depository pour revenir dans l'etat du commit precedent
+  git revert numero de commit ==> Apres avoir effectuer un commit => revenir sur un ancien commit effectué
+  git reset numero de commit --hard ==> Supprimer plein de commit et revenir au commit voulu
+
+Revenir en arriere sans rien modifier
+git log --oneline
+
